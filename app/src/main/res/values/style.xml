@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomScrollbarStyle">
+        <item name="android:scrollbarSize">8dp</item> <!-- Adjust the size as needed -->
+        <item name="android:scrollbarThumbVertical">@drawable/list_scroll</item>
+    </style>
+
+
+</resources>

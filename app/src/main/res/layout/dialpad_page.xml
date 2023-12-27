@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".contacts.DialpadActivity">
+
+    <!-- Top Navigation -->
+    <include
+        android:id="@+id/top_nav"
+        layout="@layout/balance_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
+
+    <!-- Bottom Navigation -->
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+    <!-- Dialpad Layout -->
+    <LinearLayout
+        android:id="@+id/dial_pad_layout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:layout_below="@id/top_nav"
+        android:layout_above="@id/bottom_nav"
+        android:background="#F0F0F0"
+        android:layout_marginTop="200dp">
+
+        <!-- Calling number row -->
+        <!-- calling number row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/entered_number"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:textSize="25sp"
+                android:layout_marginStart="5dp"/>
+
+            <ImageButton
+                android:id="@+id/delete_numbers"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:contentDescription="backspace"
+                android:backgroundTint="@color/transparent"
+                android:src="@drawable/ic_backspace"
+                tools:ignore="NestedWeights" />
+        </LinearLayout>
+
+
+        <!-- Rows 1-4 (Buttons 1-9) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:textAlignment="center"
+            android:padding="2dp">
+
+            <Button
+                android:id="@+id/one"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="1"
+                android:layout_marginRight="2dp"
+                android:textSize="20sp"
+                android:background="@drawable/select_dial_pad"/>
+
+            <Button
+                android:id="@+id/two"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2"
+                android:textSize="20sp"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/select_dial_pad"/>
+
+            <Button
+                android:id="@+id/three"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="3"
+                android:textSize="20sp"
+                android:background="@drawable/select_dial_pad"/>
+        </LinearLayout>
+
+        <!-- Rows 5-8 (Buttons 4-6) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <Button
+                android:id="@+id/four"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="4"
+                android:textSize="20sp"
+                android:background="@drawable/select_dial_pad"
+                android:layout_marginRight="2dp"/>
+
+            <Button
+                android:id="@+id/five"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="5"
+                android:textSize="20sp"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/select_dial_pad"/>
+
+            <Button
+                android:id="@+id/six"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="6"
+                android:textSize="20sp"
+                android:background="@drawable/select_dial_pad"/>
+        </LinearLayout>
+
+        <!-- Rows 9-12 (Buttons 7-9) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <Button
+                android:id="@+id/seven"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="7"
+                android:textSize="20sp"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/select_dial_pad"/>
+
+            <Button
+                android:id="@+id/eight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="8"
+                android:textSize="20sp"
+                android:background="@drawable/select_dial_pad"
+                android:layout_marginRight="2dp"/>
+
+            <Button
+                android:id="@+id/nine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="9"
+                android:textSize="20sp"
+                android:background="@drawable/select_dial_pad"/>
+        </LinearLayout>
+
+        <!-- Rows 13-16 (Buttons *, 0, #) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <Button
+                android:id="@+id/asterix"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="*"
+                android:textSize="20sp"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/select_dial_pad"/>
+
+            <Button
+                android:id="@+id/zero"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="20sp"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/select_dial_pad"/>
+
+            <Button
+                android:id="@+id/ash"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="#"
+                android:textSize="20sp"
+                android:background="@drawable/select_dial_pad"/>
+        </LinearLayout>
+
+        <!-- Call button row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginTop="2dp">
+
+            <ImageButton
+                android:id="@+id/dial_call_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/select_dialer"
+                android:src="@android:drawable/ic_menu_call"
+                android:contentDescription="call button" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

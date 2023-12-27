@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Within" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="customNavigationLayout">@style/bottom_nav_style</item>
+        <item name="editTextStyle">@style/EditText</item>
+        <item name="buttonStyle"> @style/Button</item>
+    </style>
+
+    <!-- Styles for the edit texts in the light theme implementing several items -->
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:bottomRightRadius">10dp</item>
+        <item name="android:bottomLeftRadius">10dp</item>
+        <item name="borderRound">2dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:innerRadius">5dp</item>
+        <item name="backgroundTint"> @color/white</item>
+    </style>
+
+
+    <style name="Theme.Within" parent="Base.Theme.Within" />
+
+</resources>

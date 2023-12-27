@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="bottom"
+    android:theme="?attr/customNavigationLayout">
+
+
+
+
+        <!-- Recent Icon -->
+        <ImageButton
+            android:id="@+id/home_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            android:scaleType="fitCenter"
+            android:contentDescription="Recent"/>
+
+        <!-- Dialpad Icon -->
+        <ImageButton
+            android:id="@+id/dialpad_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_dialpad"
+            android:scaleType="fitCenter"
+            android:contentDescription="Dialpad"/>
+
+        <!-- Contact Icon -->
+        <ImageButton
+            android:id="@+id/contact_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_contacts"
+        android:contentDescription="@string/contact"/>
+
+        <!-- Profile Icon -->
+        <ImageButton
+            android:id="@+id/profile_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="@string/profile"/>
+
+</LinearLayout>
