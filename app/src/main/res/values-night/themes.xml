@@ -4,9 +4,7 @@
     <style name="Base.Theme.Within" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="customNavigationLayout">@style/bottom_nav_style</item>
-        <item name="editTextStyle">@style/EditText</item>
-        <item name="buttonStyle"> @style/Button</item>
+        <item name="customNavigationLayout">@style/bottom_nav_style_night</item>
     </style>
 
     <!-- Styles for the edit texts in the light theme implementing several items -->
@@ -18,8 +16,23 @@
         <item name="android:innerRadius">5dp</item>
         <item name="backgroundTint"> @color/white</item>
     </style>
+    <!--Set the the attribute to the bottom navigation layout-->
+    <style name="bottom_nav_style_night">
+        <item name="android:padding">10dp</item>
+        <item name="android:radius">5dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
 
-
+    <!-- Button style -->
+    <style name="Button" parent="Widget.AppCompat.Button">
+        <!-- Customize button attributes here -->
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/button_selector</item>
+        <item name="android:backgroundTint">@color/green</item>
+        <item name="android:radius">5dp</item>
+        <item name="android:shape"> rectangle</item>
+        <!-- Add more button attributes as needed -->
+    </style>
     <style name="Theme.Within" parent="Base.Theme.Within" />
 
 </resources>

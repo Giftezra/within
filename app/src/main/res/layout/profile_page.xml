@@ -4,22 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".profile_main.ProfileActivity"
-    >
+    tools:context=".profile_main.ProfileActivity">
 
-    <include
-        android:id="@+id/bottom_nav"
-        layout="@layout/nav"
+    <!--Layout hold the text view for the layout title-->
+    <TextView
+        android:id="@+id/profile_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentTop="true"
+        android:text="Profile"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp" />
 
     <include
         android:id="@+id/top_nav"
         layout="@layout/balance_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" />
+        android:layout_below="@id/profile_title"/>
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -94,7 +99,7 @@
                     android:layout_marginEnd="20dp"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_build" />
+                    android:src="@drawable/ic_settings" />
 
                 <Button
                     android:id="@+id/settings"
@@ -107,8 +112,7 @@
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!-- Repeat the pattern for other LinearLayout elements -->
-
+            <!-- Linear layout for the add credit option -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -118,7 +122,7 @@
                 android:layout_marginEnd="5dp"
                 android:orientation="horizontal"
                 android:padding="5dp">
-
+                <!--Image view hold the icons-->
                 <ImageView
                     android:id="@+id/credit_ic"
                     android:layout_width="100dp"
@@ -140,8 +144,7 @@
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!-- Repeat the pattern for other LinearLayout elements -->
-
+            <!-- Linear layout hold the views for the credit others option -->
             <LinearLayout
                 android:id="@+id/credit_others_layout"
                 android:layout_width="match_parent"
@@ -173,11 +176,14 @@
                     android:text="Credit Others"
                     android:textSize="20sp" />
             </LinearLayout>
-
-            <!-- Rest of your layout -->
-
-
         </LinearLayout>
     </ScrollView>
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>
 

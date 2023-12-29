@@ -8,16 +8,26 @@
     android:theme="?attr/customNavigationLayout">
 
 
-
-
-        <!-- Recent Icon -->
+        <!-- Home Icon -->
         <ImageButton
             android:id="@+id/home_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:src="@drawable/ic_home"
             android:scaleType="fitCenter"
+            android:contentDescription="Home"
+            android:background="@drawable/bottom_nav_selector"/>
+
+        <!-- Recent Icon -->
+        <ImageButton
+            android:id="@+id/recent_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_recent"
+            android:scaleType="fitCenter"
+            android:background="@drawable/bottom_nav_selector"
             android:contentDescription="Recent"/>
 
         <!-- Dialpad Icon -->
@@ -28,6 +38,7 @@
             android:layout_weight="0.5"
             android:src="@drawable/ic_dialpad"
             android:scaleType="fitCenter"
+            android:background="@drawable/bottom_nav_selector"
             android:contentDescription="Dialpad"/>
 
         <!-- Contact Icon -->
@@ -37,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:src="@drawable/ic_contacts"
+            android:background="@drawable/bottom_nav_selector"
         android:contentDescription="@string/contact"/>
 
         <!-- Profile Icon -->
@@ -46,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:src="@drawable/ic_profile"
-            android:contentDescription="@string/profile"/>
+            android:contentDescription="@string/profile"
+            android:background="@drawable/bottom_nav_selector"/>
 
 </LinearLayout>

@@ -31,10 +31,6 @@
         <activity
             android:name=".initials.LandingActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".user.LoginActivity"
@@ -45,7 +41,7 @@
             android:exported="true">
         </activity>
         <activity
-            android:name=".contacts.recent.HomeActivity"
+            android:name=".recent.RecentActivity"
             android:exported="true">
         </activity>
         <activity
@@ -53,7 +49,15 @@
             android:exported="true">
         </activity>
         <activity
-            android:name=".contacts.DialpadActivity"
+            android:name=".home.HomepageActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".calls.DialpadActivity"
             android:exported="true">
         </activity>
         <activity

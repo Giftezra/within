@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Creates a side menu for the homepage aand this menu would display the user profile,
+and options to chose their preferences like currency they want their balance to display in
+and other valid options-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--User profile icon-->
+    <ImageView
+        android:id="@+id/side_bar_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_user"
+        android:layout_gravity="center"
+        android:contentDescription="profile image"/>
+
+    <!--First name view-->
+    <TextView
+        android:id="@+id/users_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello Gift"
+        android:textSize="20sp"
+        android:textColor="@color/teal"
+        android:layout_gravity="center"
+        android:layout_marginEnd="1dp"/>
+
+    <!--Users edit profile views -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp">
+
+        <!--Edit profile icon with the image view-->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:src="@drawable/ic_edit"
+            android:layout_gravity="start"
+            android:foregroundGravity="center"
+            android:layout_marginStart="1dp"/>
+
+        <!--Edit profile text view-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="Edit profile"
+            android:textSize="17sp"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+        <!--Arrow direction image view-->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:src="@drawable/ic_arrow_forward"
+            android:layout_gravity="end"
+            android:foregroundGravity="center"
+            android:layout_marginStart="1dp"/>
+    </LinearLayout>
+
+    <!--Users preference-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp">
+
+        <!--prefence icon with the image view-->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:src="@drawable/ic_build"
+            android:layout_gravity="start"
+            android:foregroundGravity="center"
+            android:layout_marginStart="1dp"/>
+
+        <!--prefenrece text view-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="Preference"
+            android:textSize="17sp"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+        <!--Arrow direction image view-->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:src="@drawable/ic_arrow_forward"
+            android:layout_gravity="end"
+            android:foregroundGravity="center"
+            android:layout_marginStart="1dp"/>
+    </LinearLayout>
+
+    <!--Users notification options -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp">
+
+        <!--Notification icon with the image view-->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:src="@drawable/ic_notification"
+            android:layout_gravity="start"
+            android:foregroundGravity="center"
+            android:layout_marginStart="1dp"/>
+
+        <!--Notification text view-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="Notifications"
+            android:textSize="17sp"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+        <!--Arrow direction image view-->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:src="@drawable/ic_arrow_forward"
+            android:layout_gravity="end"
+            android:foregroundGravity="center"
+            android:layout_marginStart="1dp"/>
+    </LinearLayout>
+</LinearLayout>

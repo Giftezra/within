@@ -6,27 +6,20 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.within.contacts.recent.HomeActivity;
+import com.example.within.recent.RecentActivity;
 import com.example.within.R;
 
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.spec.InvalidKeySpecException;
-import java.util.Base64;
 import java.util.regex.PatternSyntaxException;
-
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
 
 /** The registration activity handles the registrations page and all its backend service.
  * it extends the app compact activity and implements its onCreate method.
@@ -54,9 +47,6 @@ public class RegistrationActivity extends AppCompatActivity {
         * */
         country_code = findViewById(R.id.country_code_spinner); // Get the spinner view
         String [] spinner_item = getResources().getStringArray(R.array.spinner_items);
-        SpinnerAdapter adapter = new SpinnerAdapter(this, R.layout.spinner_layout, spinner_item);
-        adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
-        country_code.setAdapter(adapter); // Set the adapter to the spinner
 
         /*
         * Gets the password and ensure the password and confirm password match by calling
@@ -140,7 +130,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (isInserted) {
                     // If data inserted succefully, make a toast to let the user know and start a new intent to the homepage
                     Toast.makeText(RegistrationActivity.this, "Account created successfully", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(RegistrationActivity.this, RecentActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(RegistrationActivity.this, "Account not created", Toast.LENGTH_LONG).show();

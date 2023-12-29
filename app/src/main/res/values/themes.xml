@@ -3,9 +3,7 @@
     <style name="Base.Theme.Within" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="customNavigationLayout">@style/bottom_nav_style</item>
-        <item name="editTextStyle">@style/EditText</item>
-        <item name="buttonCompat">@style/Button</item>
+        <item name="customNavigationLayout">@style/bottom_nav_style_day</item>
     </style>
 
     <!-- Button style -->
@@ -13,20 +11,20 @@
         <!-- Customize button attributes here -->
         <item name="android:padding">10dp</item>
         <item name="android:background">@drawable/button_selector</item>
-        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:backgroundTint">@color/gray</item>
+        <item name="android:shape"> rectangle</item>
         <!-- Add more button attributes as needed -->
     </style>
 
     <!-- Styles the button nav bar layout-->
-    <style name="bottom_nav_style" parent="Widget.Material3.NavigationView">
+    <style name="bottom_nav_style_day">
         <item name="android:padding">10dp</item>
         <item name="android:radius">5dp</item>
-        <item name="android:background">@color/white</item>
-        <item name="backgroundTint">@color/beige</item>
+        <item name="android:background">@color/gray</item>
     </style>
 
     <!-- Styles for the edit texts in the light theme implementing several items -->
-    <style name="EditText" parent="Widget.AppCompat.EditText">
+    <style name="EditText">
         <item name="android:bottomRightRadius">10dp</item>
         <item name="android:bottomLeftRadius">10dp</item>
         <item name="borderRound">2dp</item>
@@ -34,6 +32,7 @@
         <item name="android:innerRadius">5dp</item>
         <item name="backgroundTint"> @color/gray</item>
     </style>
+
 
 
 

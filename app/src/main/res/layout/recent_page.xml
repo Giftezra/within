@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".recent.RecentActivity">
+
+    <LinearLayout
+        android:id="@+id/recent"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp">
+
+        <!-- Delete All TextView -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="delete all"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:visibility="gone"
+            android:textColor="@color/red"/>
+
+        <!-- Recent TextView (Centered) -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="Recent"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            android:textSize="20sp" />
+
+        <!-- Edit TextView -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginEnd="5dp"
+            android:text="edit"
+            android:textColor="@color/red"/>
+    </LinearLayout>
+
+    <!-- Top Navigation -->
+    <include
+        android:id="@+id/top_nav"
+        layout="@layout/balance_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <!-- Recent Lists View -->
+    <ListView
+        android:id="@+id/recent_lists_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/top_nav"
+        android:layout_above="@id/bottom_nav"
+        android:divider="@color/gray"
+        android:dividerHeight="2dp"
+        android:padding="15dp"/>
+
+    <!-- Bottom Navigation -->
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

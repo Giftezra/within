@@ -11,7 +11,21 @@
         android:id="@+id/top_nav"
         layout="@layout/balance_nav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_title"/>
+
+    <!--Layout hold the text view for the layout title-->
+    <TextView
+        android:id="@+id/profile_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Settings"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp" />
 
 
     <ScrollView

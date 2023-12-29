@@ -20,7 +20,8 @@ import androidx.core.content.ContextCompat;
 
 import com.example.within.NavigationManager;
 import com.example.within.R;
-import com.example.within.contacts.recent.HomeActivity;
+import com.example.within.calls.DialpadActivity;
+import com.example.within.recent.RecentActivity;
 import com.example.within.profile_main.ProfileActivity;
 
 import java.util.ArrayList;
@@ -81,7 +82,7 @@ public class ContactActivity extends AppCompatActivity {
         home_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavigationManager.navigateToPage(ContactActivity.this, HomeActivity.class);
+                NavigationManager.navigateToPage(ContactActivity.this, RecentActivity.class);
             }
         });
         // Listens to the profile button

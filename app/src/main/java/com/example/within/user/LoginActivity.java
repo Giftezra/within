@@ -2,9 +2,7 @@ package com.example.within.user;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.text.InputType;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +15,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.within.NavigationManager;
-import com.example.within.contacts.recent.HomeActivity;
+import com.example.within.recent.RecentActivity;
 import com.example.within.R;
 
 /**
@@ -116,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (passwordMatches) {
                     // Successful login
                     Toast.makeText(this, "Login successfully", Toast.LENGTH_SHORT).show();
-                    NavigationManager.navigateToPage(LoginActivity.this, HomeActivity.class); // Open another activity
+                    NavigationManager.navigateToPage(LoginActivity.this, RecentActivity.class); // Open another activity
                 } else {
                     // Password does not match
                     password.setError("Invalid password");

@@ -24,77 +24,48 @@ import java.util.Base64;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
-/** Data*/
+/**
+ * Database helper class which extends the SQliteHelper class to create and handle sqlite database connections
+ * create several method to insert, update and delete data from the "user" database systems.
+ * */
 public class DataBaseHelper extends SQLiteOpenHelper {
-    public enum Status {
-        SUCCESS,
-        FAILED,
-        INVALID_EMAIL_OR_PHONE,
-        INVALID_PASSWORD,
-    }
 
     /* These fields are for the hashing algorithm*/
     private static final int ITERATIONS = 10000;
     private static final int KEY_LENGTH = 256;
     private static final int SALT_LENGTH = 32;
 
-    private static final String DATABASE_NAME = "within.db";
+    private static final String DATABASE_NAME = "within.db"; // Database name
     private static final int DATABASE_VERSION = 1;
 
+    /*
+    * The create table query statement checks if the table already exists before creating the (user) table which
+    * contains the user details
+    * */
     private static final String CREATE_USER_TABLE =
             "CREATE TABLE IF NOT EXISTS user (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     "first_name TEXT, " +
                     "last_name TEXT," +
                     "password TEXT NOT NULL," +
-                    "credit_balance NUMERIC NOT NULL," +
+                    "credit_balance NUMERIC," +
+                    "location TEXT," +
+                    "currency_choices TEXT," +
                     "email TEXT NOT NULL," +
                     "phone_number LONG NOT NULL, " +
                     "date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
                     "salt TEXT NOT NULL)";
 
 
-    private Context context;
+    private Context context; // Create a context reference
 
+    /**
+     * Database helper constructor which takes just one argument of context
+     * @param context
+     * */
     public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
-    }
-
-
-    /** Method to check if the provided email/phone and password match a user record before login the user in
-     * @param phone
-     * @param password
-     * method is of an enum type and would return enum value
-     * */
-    public Status checkLoginCredentials(String phone, String password) {
-        Cursor cursor = null; // Initialize the cursor object to null to avoid null pointer exception
-        // Use try resource so the db is closed immediately
-        try (SQLiteDatabase db = this.getReadableDatabase();) {
-            String[] projection = {"id"};
-            // Select the user with the provided email or phone and password
-            String selection = "phone_number = ? AND password = ?";
-            String[] selectionArgs = {phone, password};
-            // Execute the query
-            cursor = db.query("user", projection, selection, selectionArgs, null, null, null);
-            // Check if the cursor has any rows
-            if (cursor.moveToFirst()) {
-                // Successful login
-                return Status.SUCCESS;
-            } else {
-                // No matching user found
-                if (checkPhoneExists(phone)) {// Email or phone is correct, but the password is wrong
-                    return Status.INVALID_PASSWORD;
-                } else {// Email or phone is incorrect
-                    return Status.INVALID_EMAIL_OR_PHONE;
-                }
-            }
-        } finally {
-            // Close the cursor
-            if (cursor != null) {
-                cursor.close();
-            }
-        }
     }
     /**
      * Method searches the database for the user phone number and returns a boolean if the phone number is registered
@@ -171,12 +142,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return false;
     }
-
-    /* Method to check if the database file exists in internal storage*/
-    private boolean doesDatabaseExist() {
-        File dbFile = context.getDatabasePath(DATABASE_NAME);
-        return dbFile.exists();
-    }
     /** Method gets the user phone number from the database using the specified number to check the database phone number
      * column for the number that matches it. returns a cursor object
      * @return cursor
@@ -207,18 +172,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return null; // Return null if no matching phone number is found
     }
-
-
-    /* This method is used to generate a random salt for the password hashing*/
+    /**
+     * Generates a string value (salt) using the SecureRandom method of the java util class
+     * create a byte array [salt] and initializes it with a [salt length] value passing the generate salt
+     * as parameter to the SecureRandom new byte (salt). Base64 encodes the result and returns a string value*/
     public static String generateSalt() {
         byte[] salt = new byte[SALT_LENGTH];
         new SecureRandom().nextBytes(salt);
         return Base64.getEncoder().encodeToString(salt);
     }
-
-    /** Method gets the user password using the phone number to query the database
+    /** Get the user password using the (user entered phone number) as the selectionArg[phone]
+     * to query the user database and uses the return data (eg password) to initialize the cursor object
+     * which holds the data for retrieval
      * @param phoneNumber
-     * @return password
      * */
     @SuppressLint("Range")
     public String getPassword (String phoneNumber){
@@ -237,10 +203,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return password;
     }
-
-    /** Method gets the user salt using the phone number to query the database
+    /** Gets the users password salt value using the users phone number as a selectArgs[phone]
+     * to query the user database for the (user salt) which is used to add extra security to the users password.
      * @param phoneNumber
-     * @return password
      * */
     @SuppressLint("Range")
     public String getPasswordSalt (String phoneNumber){

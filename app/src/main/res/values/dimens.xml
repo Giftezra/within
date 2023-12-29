@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This resource handles the dimensions of fields to be resized based on the dimension of their parent container-->
+<resources>
+    <dimen name="side_navigation_width" type="id">250dp</dimen><!--Sets the dimension of the homepage (side navigation) to 250dp-->
+</resources>

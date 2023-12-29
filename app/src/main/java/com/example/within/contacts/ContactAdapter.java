@@ -21,8 +21,8 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.within.Call;
 import com.example.within.R;
+import com.example.within.calls.Call;
 
 import java.util.List;
 import java.util.Objects;

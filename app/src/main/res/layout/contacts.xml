@@ -3,10 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--Layout hold the text view for the layout title-->
+    <TextView
+        android:id="@+id/profile_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Contacts"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp" />
+
     <include
         android:id="@+id/top_nav"
         layout="@layout/balance_nav"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/profile_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -22,16 +35,18 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:padding="10dp">
-
+        <!--Search bar-->
         <EditText
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:hint="Search contacts" />
+        <!--Seach icon-->
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_search" />
+            android:src="@drawable/ic_search"
+            android:contentDescription="search icon"/>
     </LinearLayout>
 
     <ListView
